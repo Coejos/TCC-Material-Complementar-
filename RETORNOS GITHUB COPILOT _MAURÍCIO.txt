@@ -1,0 +1,549 @@
+==============>HOME/INICIO MAURÍCIO
+
+Recomendações WCAG
+Critérios Violados e Melhorias Sugeridas
+WCAG 2.1.1 (Teclado)
+
+-se de que todos os elementos interativos podem ser acessados ​​via teclado.
+WCAG 1.3.1 (Informações e Relacionamentos)
+
+Continue usando HTML semântico para estruturar o conteúdo.
+WCAG 4.1.2 (Nome, Função, Valor)
+
+Adicione mais papéis ARIA conforme necessário para descrever melhor os elementos interativos.
+WCAG 1.4.3 (Contraste (Mínimo))
+
+Avalie e melhore os índices de contraste para garantir que o texto seja legível.
+Resumo da Análise
+O código fornecido atende a muitos dos critérios WCAG, mas há espaço para melhorias. Implementar mais funções ARIA e garantir uma navegação completa por 
+teclado são passos importantes. Além disso, verifique e melhore os índices de contraste aumentando a acessibilidade geral do site.
+
+Em caso de dúvidas ou necessidade de assistência adicional, não hesite em entrar em contato.
+
+# Análise de Acessibilidade
+
+### Verificação de Elementos JSX e Critérios WCAG Violados
+
+1. **Tags HTML e Critérios WCAG**
+    - `<section>`: Sem problemas.
+    - `<div>`: Sem violações específicas.
+    - `<p>`: Sem problemas.
+    - `<h1>` e `<h2>`: Sem violações.
+    - `<a>`: Uso correto de `aria-label`, mas melhorar descrições.
+    - `<img>`: Uso correto do atributo `alt`.
+
+2. **Uso de HTML Semântico**
+    - Uso correto de elementos semânticos.
+
+3. **Uso de ARIA Roles**
+    - Uso de `aria-label` é positivo. Adicionar mais ARIA roles.
+
+4. **Experiência de Leitor de Tela**
+    - Estrutura amigável, mas pode ser melhorada.
+
+5. **Navegação por Teclado**
+    - Elementos interativos acessíveis via teclado. Testes adicionais recomendados.
+
+6. **Rácios de Contraste**
+    - Avaliação adicional necessária com ferramentas automáticas.
+
+### Recomendações WCAG
+
+1. **WCAG 2.1.1 (Teclado)**
+    - Garantir acesso via teclado a todos os elementos interativos.
+
+2. **WCAG 1.3.1 (Informação e Relacionamentos)**
+    - Continuar uso de HTML semântico.
+
+3. **WCAG 4.1.2 (Nome, Função, Valor)**
+    - Adicionar mais ARIA roles.
+
+4. **WCAG 1.4.3 (Contraste (Mínimo))**
+    - Melhorar rácios de contraste.
+
+### Resumo da Análise
+
+O código atende a muitos critérios WCAG, mas pode ser melhorado com mais ARIA roles e verificações de teclado e contraste.
+
+
+
+==============>SOBRE MAURÍCIO
+
+
+Relatório de Acessibilidade
+
+Verificações e Recomendações:
+
+Uso de HTML Semântico
+Critério Violado : WCAG 1.3.1 (Informações e Relacionamentos)
+Recomendação : Utilize elementos semânticos HTML como <article>, <header>, <footer>, <nav>, etc., em vez de <div>e <span>para melhorar a estrutura semântica 
+               do documento.
+Uso de Papéis ARIA
+Critério Violado : WCAG 4.1.2 (Nome, Função, Valor)
+Recomendação : Adicione papéis ARIA onde for necessário para melhorar a acessibilidade. Por exemplo, use role="banner"para o cabeçalho, role="navigation"para 
+               a navegação, etc.
+Experiência do Leitor de Tela
+Critério Violado : WCAG 2.4.6 (Cabeçalhos e Rótulos)
+Recomendação : Certifique-se de que todos os títulos e rótulos sejam descritivos e claros para que os leitores da tela possam interpretá-los corretamente.
+Navegação por Teclado
+Critério Violado : WCAG 2.1.1 (Teclado)
+Recomendação : Verifique se todos os elementos interativos são acessíveis via teclado. Adicione atributos de tabulação quando necessário.
+Avaliação de Relações de Contraste
+Critério Violado : WCAG 1.4.3 (Contraste - Mínimo)
+Recomendação : Assegure que a relação de contraste entre o texto e o fundo seja de pelo menos 4.5:1 para texto normal e 3:1 para texto grande.
+
+Conclusão
+Uma análise revelou várias áreas onde o código poderia ser melhorado para cumprir os critérios de sucesso das WCAG.
+Implemente estas recomendações úteis para garantir que o site seja mais acessível a todos os usuários, incluindo aqueles com deficiências.
+
+
+
+==============>HABILIDADES MAURÍCIO
+
+
+Análise de Acessibilidade do Código JSX
+Verificação dos Elementos JSX
+O código fornecido contém os seguintes elementos JSX:
+
+<section>
+<SvgWaveTop />
+<div>
+<h2>
+<component>
+<strong>
+<svg>
+<path>
+Verificação de Critérios de Sucesso WCAG Violados
+Critério 1.1.1 (Conteúdo Não-textual) : A <svg>e os <path>não possuem propostas de alternativas ( alt ou aria-label),
+ o que pode dificultar a compreensão para usuários de leitores de tela.
+Critério 1.3.1 (Informações e Relacionamentos) : O uso de <div>e <span>sem funções semânticas claras pode prejudicar a navegação 
+dos leitores de tela.
+Critério 2.4.4 (Propósito do Link - em Contexto) : A navegação pelo teclado e os rótulos dos links devem ser claros e descritivos.
+Critério 4.1.2 (Nome, Função, Valor)papéis e atributos pode ser difícil: A falta de funções e atributos do ARIA pode dificultar a 
+navegação e a interação de usuários que utilizam tecnologias assistivas.
+
+Avaliação da Base de Código
+
+Uso de HTML Semântico : O código utiliza algumas tags semânticas como <section>e <h2>, mas há um uso excessivo de <div>sem funções semânticas, o que pode ser melhorado.
+Uso de ARIA Roles : Não há uso de papéis ARIA no código. Adicionar atributos ARIA pode melhorar a acessibilidade e a compreensão do conteúdo por 
+tecnologias assistivas.
+Experiência para Leitores de Tela : A experiência para leitores de tela é limitada devido à falta de alternativas alternativas e funções ARIA.
+Melhores medidas são possíveis para garantir que todo o conteúdo seja acessível.
+Navegação por Teclado : A navegação pelo teclado parece não estar completamente inovadora. Adicionar tabindex e garantir que todos os elementos interativos 
+sejam acessíveis via teclado é essencial.
+Relação de Contraste : A relação de contraste não foi avaliada diretamente no código fornecido, mas é importante garantir que todos os textos e elementos 
+interativos tenham uma relação de contraste adequada com o fundo.
+
+Recomendações
+
+Adicionar descrições alternativas :
+<svg aria-label="Descrição do SVG" role="img">
+  <!-- conteúdo do SVG -->
+</svg>
+Utilização de Tags Semânticas : Substitua <div> por tags como <article>, <section>, <nav>, etc., quando aplicável.
+
+Implementar funções ARIA :
+<div role="button" tabindex="0">Conteúdo do Botão</div>
+
+Garantir Navegação por Teclado :
+
+Adicionar tabindex intera elementos interativos.
+Garanta que todos os elementos importantes sejam acessíveis através do teclado.
+Verificar Contraste : Utilize ferramentas para verificar a relação de contraste e ajustar as cores conforme necessário.
+
+### Análise de Acessibilidade do Código JSX
+
+#### Verificação dos Elementos JSX
+O código fornecido contém os seguintes elementos JSX:
+- `<section>`
+- `<SvgWaveTop />`
+- `<div>`
+- `<h2>`
+- `<component>`
+- `<strong>`
+- `<svg>`
+- `<path>`
+
+#### Verificação de Critérios de Sucesso WCAG Violados
+- **Critério 1.1.1 (Conteúdo Não-textual)**: A `<svg>` e os `<path>` não possuem descrições alternativas (`alt` ou `aria-label`), o que pode dificultar a compreensão
+     para usuários de leitores de tela. 
+- **Critério 1.3.1 (Informação e Relacionamentos)**: O uso de `<div>` e `<span>` sem funções semânticas claras pode prejudicar a navegação de leitores de tela.
+- **Critério 2.4.4 (Propósito do Link - em Contexto)**: A navegação por teclado e os rótulos dos links devem ser claros e descritivos. 
+- **Critério 4.1.2 (Nome, Função, Valor)**: A falta de ARIA roles e atributos pode dificultar a navegação e a interação de usuários que utilizam tecnologias assistivas.
+
+#### Avaliação da Base de Código
+
+1. **Uso de HTML Semântico**:
+   - O código utiliza algumas tags semânticas como `<section>` e `<h2>`, mas há um uso excessivo de `<div>` sem funções semânticas, o que pode ser melhorado.
+
+2. **Uso de ARIA Roles**:
+   - Não há uso de ARIA roles no código. Adicionar atributos ARIA pode melhorar a acessibilidade e a compreensão do conteúdo por tecnologias assistivas.
+
+3. **Experiência para Leitores de Tela**:
+   - A experiência para leitores de tela é limitada devido à falta de descrições alternativas e ARIA roles. Melhorias são necessárias para garantir que todo 
+     o conteúdo seja acessível.
+
+4. **Navegação por Teclado**:
+   - A navegação por teclado parece não estar completamente implementada. Adicionar `tabindex` e assegurar que todos os elementos interativos sejam acessíveis
+     via teclado é essencial.
+
+5. **Relação de Contraste**:
+   - A relação de contraste não foi avaliada diretamente no código fornecido, mas é importante garantir que todos os textos e elementos interativos tenham
+     uma relação de contraste adequada com o fundo.
+
+#### Recomendações
+
+- **Adicionar Descrições Alternativas**:
+  ```html
+  <svg aria-label="Descrição do SVG" role="img">
+    <!-- conteúdo do SVG -->
+  </svg>
+  ```
+
+- **Utilizar Tags Semânticas**: Substituir `<div>` por tags como `<article>`, `<section>`, `<nav>`, etc., onde aplicável.
+
+- **Implementar ARIA Roles**:
+  ```html
+  <div role="button" tabindex="0">Conteúdo do Botão</div>
+  ```
+
+- **Garantir Navegação por Teclado**:
+  - Adicionar `tabindex` a elementos interativos.
+  - Garantir que todos os elementos importantes sejam acessíveis via teclado.
+
+- **Verificar Contraste**: Utilizar ferramentas para verificar a relação de contraste e ajustar as cores conforme necessário.
+
+### Análise de Acessibilidade do Código JSX
+
+#### Verificação dos Elementos JSX
+O código fornecido contém os seguintes elementos JSX:
+- `<section>`
+- `<SvgWaveTop />`
+- `<div>`
+- `<h2>`
+- `<component>`
+- `<strong>`
+- `<svg>`
+- `<path>`
+
+#### Verificação de Critérios de Sucesso WCAG Violados
+- **Critério 1.1.1 (Conteúdo Não-textual)**: A `<svg>` e os `<path>` não possuem descrições alternativas (`alt` ou `aria-label`), o que pode dificultar 
+    a compreensão para usuários de leitores de tela. 
+- **Critério 1.3.1 (Informação e Relacionamentos)**: O uso de `<div>` e `<span>` sem funções semânticas claras pode prejudicar a navegação de leitores de tela.
+- **Critério 2.4.4 (Propósito do Link - em Contexto)**: A navegação por teclado e os rótulos dos links devem ser claros e descritivos. 
+- **Critério 4.1.2 (Nome, Função, Valor)**: A falta de ARIA roles e atributos pode dificultar a navegação e a interação de usuários que utilizam tecnologias assistivas.
+
+#### Avaliação da Base de Código
+
+1. **Uso de HTML Semântico**:
+   - O código utiliza algumas tags semânticas como `<section>` e `<h2>`, mas há um uso excessivo de `<div>` sem funções semânticas, o que pode ser melhorado.
+
+2. **Uso de ARIA Roles**:
+   - Não há uso de ARIA roles no código. Adicionar atributos ARIA pode melhorar a acessibilidade e a compreensão do conteúdo por tecnologias assistivas.
+
+3. **Experiência para Leitores de Tela**:
+   - A experiência para leitores de tela é limitada devido à falta de descrições alternativas e ARIA roles. Melhorias são necessárias para garantir que todo
+     o conteúdo seja acessível.
+
+4. **Navegação por Teclado**:
+   - A navegação por teclado parece não estar completamente implementada. Adicionar `tabindex` e assegurar que todos os elementos interativos sejam acessíveis
+     via teclado é essencial.
+
+5. **Relação de Contraste**:
+   - A relação de contraste não foi avaliada diretamente no código fornecido, mas é importante garantir que todos os textos e elementos interativos tenham 
+     uma relação de contraste adequada com o fundo.
+
+#### Recomendações
+
+- **Adicionar Descrições Alternativas**:
+  ```html
+  <svg aria-label="Descrição do SVG" role="img">
+    <!-- conteúdo do SVG -->
+  </svg>
+  ```
+
+- **Utilizar Tags Semânticas**: Substituir `<div>` por tags como `<article>`, `<section>`, `<nav>`, etc., onde aplicável.
+
+- **Implementar ARIA Roles**:
+  ```html
+  <div role="button" tabindex="0">Conteúdo do Botão</div>
+  ```
+
+- **Garantir Navegação por Teclado**:
+  - Adicionar `tabindex` a elementos interativos.
+  - Garantir que todos os elementos importantes sejam acessíveis via teclado.
+
+- **Verificar Contraste**: Utilizar ferramentas para verificar a relação de contraste e ajustar as cores conforme necessário.
+### Análise de Acessibilidade do Código JSX
+
+#### Verificação dos Elementos JSX
+O código fornecido contém os seguintes elementos JSX:
+- `<section>`
+- `<SvgWaveTop />`
+- `<div>`
+- `<h2>`
+- `<component>`
+- `<strong>`
+- `<svg>`
+- `<path>`
+
+#### Verificação de Critérios de Sucesso WCAG Violados
+- **Critério 1.1.1 (Conteúdo Não-textual)**: A `<svg>` e os `<path>` não possuem descrições alternativas (`alt` ou `aria-label`), o que pode dificultar 
+    a compreensão para usuários de leitores de tela. 
+-
+
+ **Critério 1.3.1 (Informação e Relacionamentos)**: O uso de `<div>` e `<span>` sem funções semânticas claras pode prejudicar a navegação de leitores de tela.
+- **Critério 2.4.4 (Propósito do Link - em Contexto)**: A navegação por teclado e os rótulos dos links devem ser claros e descritivos. 
+- **Critério 4.1.2 (Nome, Função, Valor)**: A falta de ARIA roles e atributos pode dificultar a navegação e a interação de usuários que utilizam tecnologias assistivas.
+
+#### Avaliação da Base de Código
+
+1. **Uso de HTML Semântico**:
+   - O código utiliza algumas tags semânticas como `<section>` e `<h2>`, mas há um uso excessivo de `<div>` sem funções semânticas, o que pode ser melhorado.
+
+2. **Uso de ARIA Roles**:
+   - Não há uso de ARIA roles no código. Adicionar atributos ARIA pode melhorar a acessibilidade e a compreensão do conteúdo por tecnologias assistivas.
+
+3. **Experiência para Leitores de Tela**:
+   - A experiência para leitores de tela é limitada devido à falta de descrições alternativas e ARIA roles. Melhorias são necessárias para garantir que todo 
+     o conteúdo seja acessível.
+
+4. **Navegação por Teclado**:
+   - A navegação por teclado parece não estar completamente implementada. Adicionar `tabindex` e assegurar que todos os elementos interativos sejam acessíveis 
+     via teclado é essencial.
+
+5. **Relação de Contraste**:
+   - A relação de contraste não foi avaliada diretamente no código fornecido, mas é importante garantir que todos os textos e elementos interativos tenham uma 
+     relação de contraste adequada com o fundo.
+
+#### Recomendações
+
+**Adicionar Descrições Alternativas**:
+  ```html
+  <svg aria-label="Descrição do SVG" role="img">
+    <!-- conteúdo do SVG -->
+  </svg>
+  ```
+
+- **Utilizar Tags Semânticas**: Substituir `<div>` por tags como `<article>`, `<section>`, `<nav>`, etc., onde aplicável.
+
+- **Implementar ARIA Roles**:
+  ```html
+  <div role="button" tabindex="0">Conteúdo do Botão</div>
+  ```
+
+- **Garantir Navegação por Teclado**:
+  - Adicionar `tabindex` a elementos interativos.
+  - Garantir que todos os elementos importantes sejam acessíveis via teclado.
+
+- **Verificar Contraste**: Utilizar ferramentas para verificar a relação de contraste e ajustar as cores conforme necessário.
+
+
+==============>EXPERIÊNCIAS MAURÍCIO
+
+
+Recomendações WCAG
+Adicionar Descrições ARIA : Utilize aria-labelou aria-labelledbypara descrever elementos interativos.
+Melhorar a taxa de contrastede Contraste: Certifique-se de que todos os textos tenham um contraste mínimo de 4,5:1 em relação ao fundo.
+Usar HTML Semântico : Substitua <div>e <span>por elementos HTML5 seguros.
+Garantir Navegação por Teclado : Certifique-se de que todos os elementos interativos sejam navegáveis ​​via teclado,
+ adicionando tabindexe gerenciando o foco corretamente.
+
+# Análise de Acessibilidade
+
+## Verificações e Recomendações
+
+### Uso de HTML Semântico
+- **Problema**: Uso extensivo de `<div>` e `<span>` sem papéis semânticos claros.
+- **Recomendação**: Substituir `<div>` por elementos HTML5 mais semânticos como `<article>`, `<section>`, ou `<aside>` onde aplicável.
+
+### Uso de Papéis ARIA
+- **Problema**: Ausência de papéis ARIA para melhorar a acessibilidade.
+- **Recomendação**: Adicionar papéis ARIA adequados para descrever melhor os elementos e suas funções.
+
+### Experiência de Leitores de Tela
+- **Problema**: Falta de atributos `aria-label` ou `aria-labelledby` para descrever melhor os elementos aos leitores de tela.
+- **Recomendação**: Incluir atributos ARIA para fornecer descrições claras de elementos não textuais.
+
+### Navegação por Teclado
+- **Problema**: Falta de navegação clara por teclado, especialmente em elementos interativos como `<div>` e `<span>`.
+- **Recomendação**: Garantir que todos os elementos interativos sejam acessíveis via teclado, adicionando `tabindex` onde necessário.
+
+### Rácios de Contraste
+- **Problema**: Cores como `#8a8a8a` e `#b0b0b0` podem não ter contraste suficiente.
+- **Recomendação**: Verificar e ajustar o contraste de cores usando ferramentas como o Contrast Checker para atender aos critérios mínimos
+ de contraste.
+
+## Critérios WCAG Violados
+
+1. **Critério 1.1.1 (Conteúdo Não Textual)**
+   - Falta de descrições textuais dos ícones e elementos gráficos.
+
+2. **Critério 1.3.1 (Informações e Relacionamentos)**
+   - Uso extensivo de `<div>` e `<span>` sem informações semânticas claras.
+
+3. **Critério 2.1.1 (Teclado)**
+   - Elementos interativos não são acessíveis via teclado.
+
+4. **Critério 4.1.2 (Nome, Função, Valor)**
+   - Falta de atributos ARIA para elementos interativos.
+
+## Recomendações WCAG
+
+- **Adicionar Descrições ARIA**: Use `aria-label` ou `aria-labelledby` para descrever elementos interativos.
+- **Melhorar Contrast Ratio**: Assegure-se de que todos os textos tenham um contraste mínimo de 4.5:1 em relação ao fundo.
+- **Usar HTML Semântico**: Substitua `<div>` e `<span>` por elementos HTML5 apropriados.
+- **Garantir Navegação por Teclado**: Assegure que todos os elementos interativos sejam navegáveis via teclado, adicionando `tabindex`
+ e gerenciando o foco corretamente.
+
+
+
+==============>PROJETOS MAURÍCIO
+
+
+Análise de Acessibilidade do Código JavaScript
+1. Analisar Elementos e Marcação
+1.1. Uso de Elementos Não Semânticos: O código usa vários <div>e <span>, que são elementos não semânticos. Recomenda-se usar elementos semânticos como <header>,
+     <section>, <article>, <nav>, etc., para melhorar a acessibilidade.
+1.2. Uso de ARIA Roles: O código não apresenta explicitamente papéis ARIA. É importante adicionar ARIA papéis protegidos para melhorar a acessibilidade para 
+     tecnologias assistivas.
+1.3. Navegação por Teclado: O código não apresenta controles de navegação explícitos pelo teclado. -se de que todos os elementos interativos (como botões e links)
+     podem ser acessados ​​e convidativos via teclado.
+2. Avaliar Aspectos Visuais e de Interação
+2.1. Contraste de Cores: O contraste de cores é definido no CSS:
+CSS
+background: rgb(0, 191, 165);
+background: radial-gradient(circle, rgba(0, 191, 165, 0.02) 0%, rgba(0, 191, 165, 0.22) 100%);
+É importante garantir que o contraste de texto e o fundo atenda aos critérios mínimos de contraste das WCAG (4.5:1 para texto normal e 3:1 para texto grande).
+2.2. Experiência de Leitores de Tela: papéis podem ser difíceis. A estrutura do código e a falta de funções ARIA podem dificultar a navegação dos leitores de tela. 
+     -se de que a ordem dos elementos certifique-se de que a hierarquia de títulos ( <h1>, <h2>, etc.) sejam lógicas e claras.
+2.3. Violações dos Critérios de Sucesso da WCAG: 
+
+A ausência de elementos semânticos e papéis protegidos da ARIA pode violar vários critérios de sucesso da WCAG, como:
+Critério 1.3.1: Informação e Relacionamentos
+Critério 2.1.1: Teclado
+Critério 4.1.2: Nome, Função, Valor
+Recomendações de Critérios WCAG
+Critério 1.3.1 (Informações e Relacionamentos): Utilizar elementos semânticos HTML para descrever a estrutura da página. Exemplo:semânticos para descrever a estrutura
+                da página. Exemplo:<header>, <main>, <footer>, <section>, <article>, etc.
+Critério 2.1.1 (Teclado): Garantir que todos os elementos interativos possam ser acessados ​​via teclado. Use atributos tabindexquando necessário.
+Critério 4.1.2 (Nome, Função, Valor): Adicionar papéis ARIA adequados para descrever a função dos elementos interativos.papéis protegidos para descrever a função dos
+                elementos interativos.
+
+Conclusão
+Uma análise revelou que o código precisa de melhorias importantes para estar em conformidade com os critérios de sucesso das WCAG.
+Implementar elementos semânticos, adicionar funções ARIA, garantir a navegação pelo teclado e verificar contrastes de núcleos são 
+passos essenciais para melhorar a acessibilidade do aplicativo.
+
+# Análise de Acessibilidade do Código JavaScript
+
+## Elementos e Marcação
+
+- **Uso de Elementos Não Semânticos:** Substitua `<div>` e `<span>` por elementos semânticos como `<header>`, `<section>`, `<article>`, `<nav>`.
+- **Uso de ARIA Roles:** Adicione ARIA roles apropriados para melhorar a acessibilidade para tecnologias assistivas.
+- **Navegação por Teclado:** Certifique-se de que todos os elementos interativos possam ser acessados e operados via teclado.
+
+## Aspectos Visuais e de Interação
+
+- **Contraste de Cores:** Garanta que o contraste de texto e fundo atenda aos critérios mínimos de contraste da WCAG (4.5:1 para texto normal e 3:1 para texto grande).
+- **Experiência de Leitores de Tela:** Estruture o código de forma lógica e clara para facilitar a navegação por leitores de tela.
+
+## Recomendações de Critérios WCAG
+
+- **Critério 1.3.1 (Informação e Relacionamentos):** Use elementos HTML semânticos.
+- **Critério 2.1.1 (Teclado):** Garanta que todos os elementos interativos possam ser acessados via teclado.
+- **Critério 4.1.2 (Nome, Função, Valor):** Adicione ARIA roles apropriados.
+
+## Conclusão
+
+A análise revelou que o código precisa de melhorias significativas para estar em conformidade com os critérios de sucesso da WCAG.
+Implementar elementos semânticos, adicionar ARIA roles, garantir navegação por teclado e verificar contrastes de cores são passos 
+essenciais para melhorar a acessibilidade do aplicativo.
+
+
+
+==============>DEPOIMENTOS MAURÍCIO
+
+
+Resumo da análise
+Violações dos critérios de sucesso do WCAG
+
+WCAG 1.1.1 Conteúdo não textual Garanta que todas as imagens (por exemplo, ) tenham atributos.: Garanta que todas as imagens
+(por exemplo, <NuxtImg>) tenham alt atributos.
+WCAG 1.3.1 Informações e relacionamentos elementos HTML corretamenteo uso de . : Use elementos HTML semânticos corretamente e evite o uso
+excessivo de <div>.
+WCAG 1.4.3 Contraste (Mínimo)as taxas de contraste atendem aos padrões WCAG .: 
+Verifique se as taxas de contraste de cores atendem aos padrões WCAG.
+Teclado WCAG 2.1.1os elementos sejam acessíveis pelo teclado .: Certifique-se de que todos os elementos 
+interativos sejam acessíveis pelo teclado.
+WCAG 4.1.2 Nome, Função, Valor funções e propriedades ARIA para componentes personalizados: Forneça funções e propriedades ARIA
+           necessárias para componentes personalizados.
+
+Recomendações dos critérios WCAG
+Imagens : Certifique-se de que todas as imagens possuem atributos altdescritivos.
+HTML Semântico : Utilize elementos HTML semânticos específicos para representar a estrutura da página.
+Contraste de Cor : Verifique se as imitações de núcleo atendem aos padrões de contraste do WCAG.
+Navegação pelo Teclado : Garante que todos os elementos interativos sejam acessíveis via teclado.
+Componentes Customizados : Forneça os papéis e propriedades ARIA necessários para componentes customizados.
+
+Resultado em Português Brasileiro (Markdown)
+# Análise de Acessibilidade
+
+## Violações dos Critérios de Sucesso do WCAG
+- **WCAG 1.1.1 Conteúdo Não-textual**: Certifique-se de que todas as imagens (por exemplo, `<NuxtImg>`) tenham atributos `alt`.
+- **WCAG 1.3.1 Informações e Relacionamentos**: Use elementos HTML semânticos corretamente e evite o uso excessivo de `<div>`.
+- **WCAG 1.4.3 Contraste (Mínimo)**: Verifique se as proporções de contraste de cor atendem aos padrões do WCAG.
+- **WCAG 2.1.1 Teclado**: Certifique-se de que todos os elementos interativos sejam acessíveis via teclado.
+- **WCAG 4.1.2 Nome, Função, Valor**: Forneça os papéis e propriedades ARIA necessários para componentes customizados.
+
+## Recomendações dos Critérios do WCAG
+- **Imagens**: Certifique-se de que todas as imagens tenham atributos `alt` descritivos.
+- **HTML Semântico**: Utilize elementos HTML semânticos adequadamente para representar a estrutura da página.
+- **Contraste de Cor**: Verifique se as combinações de cores atendem aos padrões de contraste do WCAG.
+- **Navegação por Teclado**: Garanta que todos os elementos interativos sejam acessíveis via teclado.
+- **Componentes Customizados**: Forneça os papéis e propriedades ARIA necessários para componentes customizados.
+
+
+==============>CONTATO MAURÍCIO
+
+
+Avaliação do Código
+
+Uso de HTML semântico: O código faz bom uso de elementos HTML semânticos como <section>, <h1>, <h2>, <h3>, e <form>.
+Uso de Roles ARIA: O código utiliza aria-label nossos links para descrever o propósito dos mesmos.
+Experiência do Leitor de Tela: A experiência do leitor de tela parece ser adequada, mas deve-se garantir que todos os ícones e elementos visuais sejam acessíveis.
+Navegação por Teclado: Verifique se todos os elementos interativos são acessíveis por meio do teclado. Elementos input, textarea, e button devem ser naturalmente
+acessíveis.
+Proporções de Contraste: Verifique o contraste das cores usadas no texto e nos botões ( text-[#25d366], text-[#155724], text-[#721c24]) para garantir a conformidade
+com os critérios de contraste das WCAG.
+
+Relatório em Português Brasileiro
+### Relatório de Acessibilidade
+
+#### Critérios de Sucesso do WCAG Violados
+- **Critério 1.1.1 (Conteúdo não textual)**
+  - Verifique se todos os ícones possuem descrições textuais apropriadas para leitores de tela.
+- **Critério 1.3.1 (Informação e Relacionamentos)**
+  - Certifique-se de que a estrutura da página é compreensível por tecnologias assistivas.
+- **Critério 4.1.2 (Nome, Função, Valor)**
+  - Garanta que todos os elementos interativos tenham nomes acessíveis.
+
+#### Recomendações
+- **Uso de HTML semântico**
+  - O código utiliza adequadamente elementos semânticos como `<section>`, `<h1>`, `<h2>`, `<h3>`, e `<form>`.
+- **Uso de Roles ARIA**
+  - Utilize `aria-label` para descrever elementos interativos e garantir que todos os ícones sejam acessíveis por leitores de tela.
+- **Experiência do Leitor de Tela**
+  - Verifique a acessibilidade de todos os ícones e elementos visuais para leitores de tela.
+- **Navegação por Teclado**
+  - Assegure que todos os elementos interativos são acessíveis via teclado.
+- **Proporções de Contraste**
+  - Verifique o contraste das cores usadas no texto e nos botões para garantir a conformidade com os critérios de contraste do WCAG.
+
+### Critérios do WCAG Recomendados
+- **Critério 1.1.1 (Conteúdo não textual)**
+- **Critério 1.3.1 (Informação e Relacionamentos)**
+- **Critério 4.1.2 (Nome, Função, Valor)**
+- **Critério 2.1.1 (Teclado)**
+- **Critério 1.4.3 (Contraste - Mínimo)**
+

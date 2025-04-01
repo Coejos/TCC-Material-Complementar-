@@ -1,0 +1,583 @@
+A EVOLUÇÃO DOS PROMPTS
+
+==================>1.PRIMEIRA EXPERIÊNCIA
+
+1º Passo: Enviado o prompt com o código
+- Your task is to perform code reviews. Instructions: 
+- Write the response in Brazilian Portuguese 
+- You may receive the code for web. 
+- Provide the response in the following JSON format: {"reviews": [{"lineNumber": , "reviewComment": ""}]} 
+- The selected line CANNOT be empty or have only the characters: },{,<,>. 
+- Provide comments and suggestions ONLY if there is something to improve, otherwise "reviews" should be an empty array, 
+- Provide which WCAG 2.2 criteria are not being met, 
+- Write the comment in markdown format with emphasis on the WCAG 2.2 criteria recommendations, 
+- Perform a comprehensive accessibility analysis on the source code, focusing on adherence to WCAG 2.2 criteria with scores for each recommendation, 
+- Evaluate the codebase for key aspects such as use of semantic HTML, ARIA roles, screen reader experience, keyboard navigation, and contrast ratios, 
+- Provide detailed feedback on any potential accessibility issues and suggest practical recommendations for improvements, 
+- Ensure the analysis covers all relevant WCAG 2.2 success criteria
+1.1.	RESULTADO
+{
+    "reviews": [
+        {
+            "lineNumber": 7,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 2.4.1 - Evitar o uso de `dummyConsiderations` para dados estáticos. 
+             **Recomendação:** Utilize um backend ou um serviço de API para fornecer dados dinâmicos e garantir que o conteúdo esteja atualizado."
+        },
+        {
+            "lineNumber": 26,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.1.1 - Texto Alternativo. **Recomendação:** Certifique-se de que todas as 
+             imagens tenham um atributo `alt` descritivo para que os leitores de tela possam fornecer informações adequadas sobre o conteúdo da imagem."
+        },
+        {
+            "lineNumber": 30,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 2.4.7 - Foco Visível. **Recomendação:** Adicione estilos visíveis ao foco para elementos 
+             interativos como links e botões, garantindo que os usuários que navegam pelo teclado possam identificar facilmente onde está o foco."
+        },
+        {
+            "lineNumber": 44,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.4.3 - Contraste (Mínimo). **Recomendação:** Verifique o contraste de cores dos textos em 
+             relação ao fundo. Utilize ferramentas como o Contrast Checker para garantir que o contraste atenda ao mínimo de 4.5:1 para textos normais e 3:1 para 
+             textos grandes."
+        },
+        {
+            "lineNumber": 54,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.2.2 - Legendas (Pré-gravadas). **Recomendação:** Adicione legendas sincronizadas aos 
+             vídeos para garantir que usuários com deficiência auditiva possam compreender o conteúdo."
+        },
+        {
+            "lineNumber": 60,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.3.1 - Informação e Relacionamentos. **Recomendação:** Utilize elementos semânticos 
+             como `<figure>` e `<figcaption>` para agrupar imagens e seus textos alternativos, melhorando a estrutura de informação para tecnologias assistivas."
+        },
+        {
+            "lineNumber": 64,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.2.3 - Audiodescrição ou Media Alternativa (Pré-gravada). **Recomendação:** Forneça uma 
+            audiodescrição ou uma alternativa textual para os conteúdos de vídeo para garantir que usuários cegos ou com baixa visão possam acessar 
+            todas as informações visuais."
+        }
+    ]
+}
+
+COMANDO: A linha 7 está vazia.  Revise os critérios
+
+RESULTADO
+{
+    "reviews": [
+        {
+            "lineNumber": 26,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.1.1 - Texto Alternativo. **Recomendação:** Certifique-se de que todas as 
+             imagens tenham um atributo `alt` descritivo para que os leitores de tela possam fornecer informações adequadas sobre o conteúdo da imagem."
+        },
+        {
+            "lineNumber": 30,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 2.4.7 - Foco Visível. **Recomendação:** Adicione estilos visíveis ao foco para 
+             elementos interativos como links e botões, garantindo que os usuários que navegam pelo teclado possam identificar facilmente onde está o foco."
+        },
+        {
+            "lineNumber": 44,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.4.3 - Contraste (Mínimo). **Recomendação:** Verifique o contraste de cores dos textos 
+             em relação ao fundo. Utilize ferramentas como o Contrast Checker para garantir que o contraste atenda ao mínimo de 4.5:1 para textos normais e 3:1 
+             para textos grandes."
+        },
+        {
+            "lineNumber": 54,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.2.2 - Legendas (Pré-gravadas). **Recomendação:** Adicione legendas sincronizadas aos 
+             vídeos para garantir que usuários com deficiência auditiva possam compreender o conteúdo."
+        },
+        {
+            "lineNumber": 60,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.3.1 - Informação e Relacionamentos. **Recomendação:** Utilize elementos semânticos 
+             como `<figure>` e `<figcaption>` para agrupar imagens e seus textos alternativos, melhorando a estrutura de informação para tecnologias assistivas."
+        },
+        {
+            "lineNumber": 64,
+            "reviewComment": "**Critério WCAG 2.2 Não Conformidade:** 1.2.3 - Audiodescrição ou Media Alternativa (Pré-gravada). **Recomendação:** Forneça uma 
+             audiodescrição ou uma alternativa textual para os conteúdos de vídeo para garantir que usuários cegos ou com baixa visão possam acessar 
+             todas as informações visuais."
+        }
+    ]
+}
+
+
+
+==================>2.SEGUNDA EXPERIÊNCIA
+
+1º Passo: Enviado o prompt com o código
+
+Your task is to perform code reviews. Instructions:
+- Write the response in Brazilian Portuguese 
+- You may receive the code for web. - Provide the response in the following JSON format: {"reviews": [{"lineNumber": , "reviewComment": ""}]} 
+- The selected line CANNOT be empty or have only the characters: }, or {, or <, or >, or (, or ). 
+- Provide comments and suggestions ONLY if there is something to improve, otherwise "reviews" should be an empty array, 
+- Provide which WCAG 2.2 criteria are not being met, 
+- Write the comment in markdown format with emphasis on the WCAG 2.2 criteria recommendations, 
+- Perform a comprehensive accessibility analysis on the source code, focusing on adherence to WCAG 2.2 criteria with scores for each recommendation, 
+- Evaluate the codebase for key aspects such as use of semantic HTML, ARIA roles, screen reader experience, keyboard navigation, and contrast ratios, 
+- Provide detailed feedback on any potential accessibility issues and suggest practical recommendations for improvements, 
+- Ensure the analysis covers all relevant WCAG 2.2 success criteria,
+
+2.1	RESULTADO
+
+
+{
+  "reviews": [
+    {
+      "lineNumber": 24,
+      "reviewComment": "Atributo `alt` de imagem não está presente na tag `<Image>`. **WCAG 2.2 Critério 1.1.1 Conteúdo não textual**: Certifique-se de que 
+       todas as imagens forneçam descrições alternativas (atributo `alt`) para garantir que o conteúdo não textual seja acessível a usuários de leitores de tela."
+    },
+    {
+      "lineNumber": 16,
+      "reviewComment": "Atributo `aria-label` não está presente na tag `<Link>`. **WCAG 2.2 Critério 2.4.4 Propósito do Link (em Contexto)**: 
+       Adicione um `aria-label` para descrever a finalidade do link, melhorando a navegação para usuários de leitores de tela."
+    },
+    {
+      "lineNumber": 71,
+      "reviewComment": "Atributo `aria-label` não está presente na tag `<audio>`. **WCAG 2.2 Critério 1.2.1 Áudio-Descrição (Pré-Gravado)**: 
+       Adicione um `aria-label` para descrever o conteúdo do áudio, melhorando a acessibilidade para usuários de leitores de tela."
+    },
+    {
+      "lineNumber": 56,
+      "reviewComment": "Atributo `aria-label` não está presente na tag `<video>`. **WCAG 2.2 Critério 1.2.2 Legendas (Pré-Gravado)**: 
+       Adicione um `aria-label` para descrever o conteúdo do vídeo e certifique-se de que os vídeos tenham legendas para garantir a acessibilidade."
+    }
+  ]
+}
+COMANDO: A linha 16 está vazia.  Revise os critérios
+
+RESULTADO
+{
+  "reviews": [
+    {
+      "lineNumber": 24,
+      "reviewComment": "Atributo `alt` de imagem não está presente na tag `<Image>`. **WCAG 2.2 Critério 1.1.1 Conteúdo não textual**: 
+       Certifique-se de que todas as imagens forneçam descrições alternativas (atributo `alt`) para garantir que o conteúdo não textual seja acessível 
+       a usuários de leitores de tela."
+    },
+    {
+      "lineNumber": 71,
+      "reviewComment": "Atributo `aria-label` não está presente na tag `<audio>`. **WCAG 2.2 Critério 1.2.1 Áudio-Descrição (Pré-Gravado)**: 
+       Adicione um `aria-label` para descrever o conteúdo do áudio, melhorando a acessibilidade para usuários de leitores de tela."
+    },
+    {
+      "lineNumber": 56,
+      "reviewComment": "Atributo `aria-label` não está presente na tag `<video>`. **WCAG 2.2 Critério 1.2.2 Legendas (Pré-Gravado)**: Adicione um `aria-label` 
+       para descrever o conteúdo do vídeo e certifique-se de que os vídeos tenham legendas para garantir a acessibilidade."
+    }
+  ]
+}
+
+
+
+==================>3.TERCEIRA EXPERIÊNCIA
+
+1ª Passo: Enviado o prompt, depois o prompt solicitou o código a ser analisado.
+- Review the source code following these guidelines: 
+- Maintain identification of the provided code 
+- Perform a comprehensive accessibility analysis on the source code, focusing on adherence to WCAG 2.2 criteria, 
+- The analysis should cover all WCAG 2.2 success criteria, 
+- Select the HTML tag from the provided source code that violates any WCAG 2.2 criteria and report which WACAG 2.2 criteria were violated 
+- Evaluate the codebase for key aspects such as use of semantic HTML, ARIA roles, screen reader experience, keyboard navigation, and contrast ratios, 
+- Write the response in Brazilian Portuguese in JSON format: {"reviews": [{"lineNumber": , "reviewComment": ""}]}, in ascending order 
+- Write comments in markdown format with emphasis on WCAG 2.2 criteria recommendations,
+
+
+3.1	Resultado
+{
+  "reviews": [
+    {
+      "lineNumber": 8,
+      "reviewComment": "Uso de ícones SVG sem atributos 'aria-label' ou 'role'. Recomenda-se adicionar 'role=\"img\"' e 'aria-label' para melhorar 
+       a acessibilidade para leitores de tela. WCAG 2.2 critério 1.1.1 (Conteúdo não textual)."
+    },
+    {
+      "lineNumber": 58,
+      "reviewComment": "Botão de colapso não possui texto acessível. Adicione um 'aria-label' ou 'aria-labelledby' para descrever sua função. 
+       WCAG 2.2 critério 4.1.2 (Nome, função, valor)."
+    },
+    {
+      "lineNumber": 75,
+      "reviewComment": "Os links de navegação não têm texto acessível e dependem apenas de ícones. Adicione um 'aria-label' para melhorar a 
+      acessibilidade. WCAG 2.2 critério 2.4.4 (Propósito do link, no contexto)."
+    },
+    {
+      "lineNumber": 78,
+      "reviewComment": "A navegação por teclado pode ser dificultada pela falta de indicadores de foco visuais. Adicione estilos CSS para exibir 
+       claramente o foco nos elementos interativos. WCAG 2.2 critério 2.1.1 (Teclado)."
+    },
+    {
+      "lineNumber": 85,
+      "reviewComment": "O contraste entre o texto e o fundo pode não ser suficiente. Certifique-se de que a razão de contraste atenda aos requisitos 
+       mínimos de 4.5:1 para texto pequeno. WCAG 2.2 critério 1.4.3 (Contraste - mínimo)."
+    },
+    {
+      "lineNumber": 94,
+      "reviewComment": "O 'div' está sendo usado para itens de navegação, o que pode não ser semanticamente correto. Considere usar elementos 'nav' e 'ul' 
+       para melhorar a semântica HTML. WCAG 2.2 critério 1.3.1 (Informação e relacionamento)."
+    }
+  ]
+}
+
+Comentários em Markdown
+
+Uso de ícones SVG sem atributos 'aria-label' ou 'role' :
+
+Recomendação : Adicionar role="img"e aria-labelpara melhorar a acessibilidade para leitores de tela.
+Critério WCAG 2.2 : 1.1.1 Conteúdo não textual
+Botão de colapso não possui texto acessível :
+
+Recomendação : Adicione um aria-labelou aria-labelledbypara descrever sua função.
+Critério WCAG 2.2 : 4.1.2 Nome, função, valor
+Links de navegação não têm texto acessível e dependem apenas de ícones :
+
+Recomendação : Adicione um aria-labelpara melhorar a acessibilidade.
+Critério WCAG 2.2 : 2.4.4 Propósito do link, no contexto
+A navegação pelo teclado pode ser dificultada pela falta de indicadores de foco visuais :
+
+Recomendação : Adicione estilos CSS para exibir claramente o foco nos elementos interativos.
+Critério WCAG 2.2 : 2.1.1 Teclado
+O contraste entre o texto e o fundo pode não ser suficiente :
+
+Recomendação : Certificar-se de que a razão de contraste atende aos requisitos mínimos de 4.5:1 para texto pequeno.
+Critério WCAG 2.2 : 1.4.3 Contraste - mínimo
+O uso de 'div' para itens de navegação pode não ser semanticamente correto :
+
+Recomendação : Considere usar elementos nave ulmelhorar a semântica HTML.
+Critério WCAG 2.2 : 1.3.1 Informação e relacionamento
+
+
+
+==================>4.QUARTA EXPERIÊNCIA
+1ª Passo: Enviado o código a ser analisado
+2º Passo: Enviado o prompt
+-Identify the code 
+- Number the lines of code 
+- If the line contains only the number, consider it invalid. 
+  Example: 1. // invalid 45. // invalid - Consider invalid the line that ends with: (, or (, or {, or }, or <, or >.
+
+4.1	RESULTADO
+1. import classNames from "classnames";
+2. import Link from "next/link";
+3. import { useRouter } from "next/router";
+4. import React, { useState, useMemo } from "react";
+5. 
+6. import {
+7. // invalid
+8.     ArticleIcon,
+9.     CollapsIcon,
+10.     HomeIcon,
+11.     LogoIcon,
+12.     LogoutIcon,
+13.     UsersIcon,
+14.     QuestionsIcon,
+15.   } from "./icons";
+16. // invalid
+17. 
+18. const menuItems = [
+19. // invalid
+20.     { id: 1, label: "Inicio", icon: HomeIcon, link: "/" },
+21.     { id: 2, label: "Considerações de Design", icon: ArticleIcon, link: "/inclue/considerations" },
+22.     { id: 3, label: "Personas", icon: UsersIcon, link: "/inclue/personas" },
+23.     { id: 4, label: "Perguntas e Respostas",  icon: ArticleIcon, link: "/inclue/questions" },
+24.     { id: 5, label: "Sobre", icon: ArticleIcon, link: "/inclue/about" },
+25. ];
+26. // invalid
+27. 
+28. // Para implmenetar uma página auxiliar, voc~e deve criar aqui o item auxiliar com id do pai e a rota do cpage
+29. const subMenuItem = [
+30. // invalid
+31.   { id: 2, label: "Considerações de Design", icon: ArticleIcon, link: "/inclue/consideration" },
+32. ];
+33. // invalid
+34. 
+35. const menus = [].concat(menuItems, subMenuItem);
+36. 
+37. const Sidebar = () => {
+38. // invalid
+39.   const [toggleCollapse, setToggleCollapse] = useState(false);
+40.   const [isCollapsible, setIsCollapsible] = useState(false);
+41. 
+42.   const router = useRouter();
+43. 
+44.   const activeMenu = useMemo(
+45. // invalid
+46.     () => menus.find((menu) => menu.link === router.pathname),
+47.     [router.pathname]
+48. // invalid
+49.   );
+50. // invalid
+51. 
+52.   const wrapperClasses = classNames(
+53. // invalid
+54.     "h-screen px-4 pt-8 pb-4 bg-light flex justify-between flex-col",
+55.     {
+56.       ["w-80"]: !toggleCollapse,
+57.       ["w-20"]: toggleCollapse,
+58.     }
+59.   );
+60. // invalid
+61. 
+62.   const collapseIconClasses = classNames(
+63. // invalid
+64.     "p-4 rounded bg-light-lighter absolute right-0",
+65.     {
+66.       "rotate-180": toggleCollapse,
+67.     }
+68.   );
+69. // invalid
+70. 
+71.   const getNavItemClasses = (menu) => {
+72. // invalid
+73.     return classNames(
+74.       "flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap",
+75.       {
+76.         ["bg-light-lighter"]: (activeMenu.id === menu.id),
+77.       }
+78.     );
+79. // invalid
+80.   };
+81. 
+82.   const onMouseOver = () => {
+83.     setIsCollapsible(!isCollapsible);
+84.   };
+85. 
+86.   const handleSidebarToggle = () => {
+87.     setToggleCollapse(!toggleCollapse);
+88.   };
+89. 
+90.   return (
+91. // invalid
+92.     <div
+93.       className={wrapperClasses}
+94.       onMouseEnter={onMouseOver}
+95.       onMouseLeave={onMouseOver}
+96.       style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
+97.     >
+98. // invalid
+99.       <div className="flex flex-col">
+100.       // invalid
+101.         <div className="flex items-center justify-between relative">
+102.         // invalid
+103.           <div className="flex items-center pl-1 gap-4">
+104.           // invalid
+105.             <LogoIcon />
+106.             <span
+107.               className={classNames("mt-2 text-lg font-medium text-text", {
+108.                 hidden: toggleCollapse,
+109.               })}
+110.             >
+111.               Inclue
+112.             </span>
+113.           </div>
+114.           {isCollapsible && (
+115.             <button
+116.               className={collapseIconClasses}
+117.               onClick={handleSidebarToggle}>
+118.               <CollapsIcon />
+119.             </button>
+120.           )}
+121.         </div>
+122. 
+123.         <div className="flex flex-col items-start mt-24">
+124.         // invalid
+125.           {menuItems.map(({ icon: Icon, ...menu }) => {
+126.             const classes = getNavItemClasses(menu);
+127.             return (
+128.             // invalid
+129.               <div className={classes} key={menu.id}>
+130.                 <Link href={{pathname: menu.link}} >
+131.                   <div className="flex py-4 px-3 items-center w-full h-full">
+132.                     <div style={{ width: "2.5rem" }}>
+133.                       <Icon />
+134.                     </div>
+135.                     {!toggleCollapse && (
+136.                       <span
+137.                         className={classNames(
+138.                           "text-md font-medium text-text-light"
+139.                         )}
+140.                       >
+141.                         {menu.label}
+142.                       </span>
+143.                     )}
+144.                   </div>
+145.                 </Link>
+146.               </div>
+147.             );
+148.           })}
+149.         </div>
+150.       </div>
+151.     </div>
+152.   );
+153. };
+154. 
+155. export default Sidebar;
+
+3º Passo: Enviado o segundo prompt
+
+- Review the source code following these guidelines: 
+- Maintain identification of the provided code 
+- Perform a comprehensive accessibility analysis on the source code, focusing on adherence to WCAG 2.2 criteria, 
+- The analysis should cover all WCAG 2.2 success criteria, 
+- Select the HTML tag from the provided source code that violates any WCAG 2.2 criteria and report which WACAG 2.2 criteria were violated 
+- Evaluate the codebase for key aspects such as use of semantic HTML, ARIA roles, screen reader experience, keyboard navigation, and contrast ratios, 
+- Write the response in Brazilian Portuguese in JSON format: {"reviews": [{"lineNumber": , "reviewComment": ""}]}, in ascending order 
+- Write comments in markdown format with emphasis on WCAG 2.2 criteria recommendations,
+
+4.2	RESULTADO
+{
+  "reviews": [
+    {
+      "lineNumber": 1,
+      "reviewComment": "A importação do 'classnames' é válida, mas deve-se garantir que as classes CSS aplicadas atendam aos critérios de contraste 
+       de cor da WCAG 2.2."
+    },
+    {
+      "lineNumber": 92,
+      "reviewComment": "O elemento <div> deve ter um papel ARIA apropriado (role=\"navigation\") para ser identificado corretamente por leitores de 
+       tela, atendendo ao critério de Sucesso 1.3.1 (Informações e Relacionamentos)."
+    },
+    {
+      "lineNumber": 103,
+      "reviewComment": "O elemento <div> deve ter um papel ARIA apropriado (role=\"banner\") para ser identificado corretamente por leitores de tela, 
+       atendendo ao critério de Sucesso 1.3.1 (Informações e Relacionamentos)."
+    },
+    {
+      "lineNumber": 105,
+      "reviewComment": "A tag <LogoIcon /> deve ter um texto alternativo (alt) descritivo para melhorar a acessibilidade para leitores de tela, conforme 
+       o critério de Sucesso 1.1.1 (Conteúdo Não Textual)."
+    },
+    {
+      "lineNumber": 107,
+      "reviewComment": "O elemento <span> deve usar uma tag de cabeçalho apropriada (<h1>, <h2>, etc.) para melhorar a navegação e a semântica, conforme 
+       o critério de Sucesso 2.4.6 (Cabeçalhos e Rótulos)."
+    },
+    {
+      "lineNumber": 115,
+      "reviewComment": "O elemento <button> deve fornecer feedback visual ao receber foco (via CSS), cumprindo o critério de Sucesso 2.4.7 (Foco Visível)."
+    },
+    {
+      "lineNumber": 123,
+      "reviewComment": "O elemento <div> deve ter um papel ARIA apropriado (role=\"menu\") para ser identificado corretamente por leitores de tela, atendendo 
+       ao critério de Sucesso 1.3.1 (Informações e Relacionamentos)."
+    },
+    {
+      "lineNumber": 127,
+      "reviewComment": "Cada item de menu deve ser um elemento <button> ou <a> com papel ARIA apropriado (role=\"menuitem\") para melhorar a navegação por 
+       leitor de tela, conforme o critério de Sucesso 4.1.2 (Nome, Função, Valor)."
+    },
+    {
+      "lineNumber": 133,
+      "reviewComment": "A tag <Icon /> deve ter um texto alternativo (alt) descritivo para melhorar a acessibilidade para leitores de tela, conforme 
+       o critério de Sucesso 1.1.1 (Conteúdo Não Textual)."
+    },
+    {
+      "lineNumber": 136,
+      "reviewComment": "O elemento <span> deve usar uma tag de cabeçalho apropriada (<h1>, <h2>, etc.) para melhorar a navegação e a semântica, 
+       conforme o critério de Sucesso 2.4.6 (Cabeçalhos e Rótulos)."
+    }
+  ]
+}
+
+Não enviou os comentários em formato markdown, mesmo depois de solicitado
+
+
+
+
+
+==================>5.EXPERIÊNCIA SEM O PROMPT DEFINIDO
+Foi perguntado ao Copilot quais eram os principais diretrizes da WCAG. E com base na resposta do LLM se solicitou que analisasse o código com base nessa resposta.
+
+5.1	RESULTADO
+
+Aqui está a análise de acessibilidade para o código fornecido, conforme os critérios de sucesso da WCAG 2.2. 
+A análise está escrita em português brasileiro e segue o formato JSON solicitado:
+
+```json
+{
+  "reviews": [
+    {
+      "lineNumber": 60,
+      "reviewComment": "O elemento <button> não possui um rótulo acessível. Adicione um atributo aria-label para fornecer uma descrição para 
+       leitores de tela. [WCAG 2.2 - Critério de Sucesso 4.1.2: Name, Role, Value]"
+    },
+    {
+      "lineNumber": 70,
+      "reviewComment": "Os links de navegação não possuem texto alternativo descritivo. Adicione texto alternativo para os ícones ou use o 
+       atributo aria-label para melhorar a acessibilidade. [WCAG 2.2 - Critério de Sucesso 1.1.1: Non-text Content]"
+    },
+    {
+      "lineNumber": 97,
+      "reviewComment": "O contêiner <div> que envolve os itens de navegação deve usar elementos de lista (<ul> e <li>) para melhorar a semântica 
+       HTML e a navegação por leitores de tela. [WCAG 2.2 - Critério de Sucesso 1.3.1: Info and Relationships]"
+    },
+    {
+      "lineNumber": 22,
+      "reviewComment": "Verifique a relação de contraste entre o texto e o fundo para garantir que está em conformidade com as diretrizes de 
+       contraste de cores. [WCAG 2.2 - Critério de Sucesso 1.4.3: Contrast (Minimum)]"
+    }
+  ]
+}
+```
+
+### Comentários em Markdown
+
+- **Critério de Sucesso 4.1.2: Name, Role, Value** # Trecho de linha 96 a 100
+  - O elemento `<button>` não possui um rótulo acessível. Adicione um atributo `aria-label` para fornecer uma descrição para leitores de tela.
+  ```jsx
+  <button
+    className={collapseIconClasses}
+    onClick={handleSidebarToggle}
+    aria-label="Toggle Sidebar"
+  >
+    <CollapsIcon />
+  </button>
+  ```
+
+- **Critério de Sucesso 1.1.1: Non-text Content** #Trecho de linha 109 a 124
+  - Os links de navegação não possuem texto alternativo descritivo. Adicione texto alternativo para os ícones ou use o atributo `aria-label` 
+    para melhorar a acessibilidade.
+  ```jsx
+  <Link href={{ pathname: menu.link }}>
+    <div className="flex py-4 px-3 items-center w-full h-full">
+      <div style={{ width: "2.5rem" }}>
+        <Icon aria-label={menu.label} />
+      </div>
+      {!toggleCollapse && (
+        <span className={classNames("text-md font-medium text-text-light")}>
+          {menu.label}
+        </span>
+      )}
+    </div>
+  </Link>
+  ```
+
+- **Critério de Sucesso 1.3.1: Info and Relationships** #Trecho de linha 104. Oferece uma mudança de código abaixo.
+  - O contêiner `<div>` que envolve os itens de navegação deve usar elementos de lista (`<ul>` e `<li>`) para melhorar a semântica HTML e a 
+    navegação por leitores de tela.
+  ```jsx
+  <ul className="flex flex-col items-start mt-24">
+    {menuItems.map(({ icon: Icon, ...menu }) => {
+      const classes = getNavItemClasses(menu);
+      return (
+        <li className={classes}>
+          <Link href={{ pathname: menu.link }}>
+            <div className="flex py-4 px-3 items-center w-full h-full">
+              <div style={{ width: "2.5rem" }}>
+                <Icon />
+              </div>
+              {!toggleCollapse && (
+                <span className={classNames("text-md font-medium text-text-light")}>
+                  {menu.label}
+                </span>
+              )}
+            </div>
+          </Link>
+        </li>
+      );
+    })}
+  </ul>
+  ```
+
+- **Critério de Sucesso 1.4.3: Contrast (Minimum)**
+  - Verifique a relação de contraste entre o texto e o fundo para garantir que está em conformidade com as diretrizes de contraste de cores. 
+    Utilize ferramentas como a [Ferramenta de Análise de Contraste do WebAIM](https://webaim.org/resources/contrastchecker/) para validar as cores utilizadas.

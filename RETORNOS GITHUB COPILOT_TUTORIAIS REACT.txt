@@ -1,0 +1,74 @@
+==============>JOGO DA VELHA
+
+Análise de Acessibilidade
+Verificação de elementos JSX:
+Tags utilizadas: <div>, <button>
+Verificações:
+Uso de <div> para elementos de status: O <div> é utilizado para exibir o status do jogo, o que pode ser uma violação se não for acompanhado de atributos ARIA adequados.
+Avaliação do código:
+Uso de HTML semântico:O código não utiliza elementos HTML semânticos como <header>, <main>, <section>, <article>, etc. Isso pode impactar negativamente a acessibilidade.
+Uso de ARIA roles:Não há uso de roles ARIA no código, o que é uma área de melhoria para descrever melhor as intenções dos elementos para tecnologias assistivas.
+Experiência com leitores de tela:A ausência de atributos ARIA e HTML semântico pode dificultar a navegação e a compreensão do conteúdo para usuários de leitores de tela.
+Navegação por teclado:Os botões <button> permitem navegação por teclado, mas a falta de feedback visual ao focar e a ausência de atributos ARIA podem ser limitantes.
+Relação de contraste:O código não define estilos CSS, então a avaliação de contraste de cores não pode ser realizada diretamente. É necessário verificar os estilos aplicados para garantir que cumpram os critérios de contraste mínimo.
+
+Recomendações de Critérios WCAG:
+Critério 1.3.1 - Informação e Relacionamentos:
+
+Utilize elementos HTML semânticos para estruturar melhor a informação.
+Exemplo: Use <main> para o conteúdo principal, <section> para seções distintas do jogo.
+Critério 4.1.2 - Nome, Papel, Valor:
+
+Adicione atributos ARIA para descrever melhor os elementos.
+Exemplo: Use role="status" para o elemento que exibe o status do jogo, aria-live="polite" para atualizações dinâmicas.
+Critério 2.4.7 - Foco Visível:
+
+Assegure-se de que todos os elementos interativos possuem um indicador de foco visível.
+Exemplo: Adicione estilos CSS para destacar o foco nos botões.
+Critério 1.4.3 - Contraste (Mínimo):
+
+Verifique a relação de contraste dos elementos de texto e fundo.
+Exemplo: Utilize ferramentas de verificação de contraste e ajuste as cores conforme necessário.
+
+
+
+==============>PESQUISA EM TABELA
+
+
+Análise de Acessibilidade WCAG para o Código JavaScript
+Analisando cada elemento JSX:
+Tags: <div>, <span>, <tr>, <th>, <td>, <table>, <thead>, <tbody>, <form>, <input>, <label>.
+Verificação de violações dos critérios de sucesso WCAG:
+<div>: Nenhum problema específico.
+<span>: O conteúdo do <span> possui um estilo de cor vermelha para produtos fora de estoque, o que pode violar os critérios de contraste.
+<table>, <tr>, <th>, <td>, <thead>, <tbody>: Uso de tabelas sem cabeçalhos adequados ou descrições pode impactar a acessibilidade.
+<form> e <input>: Os rótulos <label> são usados corretamente, mas o placeholder no <input> "Search..." pode não ser suficiente para todos os usuários.
+
+Avaliação do Código:
+
+Uso de HTML semântico:Utilização correta de <table>, mas a falta de cabeçalhos e descrições pode dificultar a navegação de leitores de tela.
+Uso de ARIA roles:Não foram encontrados ARIA roles no código. A inclusão de roles apropriados pode melhorar a acessibilidade.
+Experiência com leitores de tela:Sem cabeçalhos de tabela adequados, a navegação pode ser difícil.
+Placeholder "Search..." não é suficiente como substituto para um rótulo visível.
+Navegação por teclado:Navegação básica por teclado parece possível, mas deve ser testada para confirmações adicionais.
+Rácios de contraste:O texto vermelho no <span> pode não ter contraste suficiente.
+
+Recomendações WCAG
+Markdown
+# Recomendações WCAG
+
+1. **Critério 1.3.1 Informações e Relacionamentos**:
+   - Certifique-se de que as tabelas tenham cabeçalhos (`<th>`) e que estes estejam devidamente associados às colunas de dados.
+
+2. **Critério 1.4.3 Contraste (Mínimo)**:
+   - Garanta que o texto em vermelho no `<span>` tenha um contraste suficiente com o fundo, especialmente para usuários com deficiência visual.
+
+3. **Critério 3.3.2 Rótulos ou Instruções**:
+   - O placeholder "Search..." no campo de entrada pode não ser suficiente. Considere adicionar um rótulo visível ou usar atributos
+     ARIA para descrever a finalidade do campo de entrada.
+
+4. **Critério 4.1.2 Nome, Função, Valor**:
+   - Adicione roles ARIA apropriados para melhorar a experiência de usuários de leitores de tela.
+
+5. **Navegação por Teclado**:
+   - Teste e garanta que todos os elementos interativos (como campos de entrada e botões de seleção) sejam acessíveis via teclado.

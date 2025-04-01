@@ -1,0 +1,442 @@
+
+==============> CONSIDERAÇÕES - INCLUE
+```markdown
+# Análise de Acessibilidade do Código JSX
+
+## **Exame dos Elementos JSX**
+
+### **Tags e Critérios WCAG Violados**
+1. **`<div>` e `<span>`**
+   - **Problema**: Uso excessivo de `<div>` e `<span>` sem semântica clara.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Elementos semânticos devem ser usados para transmitir significado.
+   - **Recomendação**: Substituir `<div>` e `<span>` por elementos semânticos como `<section>`, `<article>`, `<header>`, `<footer>`, etc., quando apropriado.
+
+2. **Falta de Texto Alternativo**
+   - **Problema**: O ícone SVG no campo de busca não possui texto alternativo.
+   - **Critério Violado**: WCAG 1.1.1 (Conteúdo Não-Textual) - Todo conteúdo não textual deve ter uma alternativa textual.
+   - **Recomendação**: Adicionar `aria-label` ou `title` ao ícone para descrever sua função.
+
+3. **Falta de Identificação de Botões**
+   - **Problema**: Botões de categoria (`dummyCategories.map`) não possuem atributos de acessibilidade.
+   - **Critério Violado**: WCAG 2.4.4 (Propósito do Link) - Links e botões devem ser identificáveis.
+   - **Recomendação**: Adicionar `aria-label` para descrever a funcionalidade de cada botão.
+
+4. **Falta de Foco Visível**
+   - **Problema**: Elementos interativos, como botões e campos de entrada, não possuem estilos de foco visível.
+   - **Critério Violado**: WCAG 2.4.7 (Foco Visível) - Elementos interativos devem ter um indicador de foco visível.
+   - **Recomendação**: Adicionar estilos CSS para foco, como `outline`.
+
+---
+
+## **Avaliação do Código**
+
+### **Uso de HTML Semântico**
+- **Problema**: Uso inadequado de `<div>` para estruturação.
+- **Recomendação**: Substituir por elementos semânticos como `<nav>`, `<ul>`, `<li>`, `<section>`, etc.
+
+### **Uso de ARIA Roles**
+- **Problema**: Falta de ARIA roles para elementos interativos.
+- **Recomendação**: Adicionar roles como `role="button"` e atributos como `aria-expanded` para melhorar a acessibilidade.
+
+### **Experiência com Leitores de Tela**
+- **Problema**: Ícones e elementos interativos não possuem descrições adequadas.
+- **Recomendação**: Adicionar `aria-label` ou `aria-describedby` para melhorar a experiência.
+
+### **Navegação por Teclado**
+- **Problema**: Elementos interativos não são acessíveis via teclado.
+- **Recomendação**: Garantir que todos os elementos interativos sejam navegáveis com `Tab` e acionáveis com `Enter` ou `Space`.
+
+### **Relação de Contraste**
+- **Problema**: Botões de categoria e texto em `text-sm` podem não atender ao contraste mínimo.
+- **Critério Violado**: WCAG 1.4.3 (Contraste - Mínimo) - Relação de contraste mínima de 4.5:1 para texto normal.
+- **Recomendação**: Ajustar as cores para atender ao contraste mínimo.
+
+---
+
+## **Recomendações Gerais**
+1. **Adicionar Testes de Acessibilidade Automatizados**
+   - Use ferramentas como Axe ou Lighthouse para identificar problemas adicionais.
+
+2. **Seguir as Diretrizes WCAG**
+   - Consulte as diretrizes WCAG 2.1 para garantir conformidade.
+
+3. **Testar com Usuários Reais**
+   - Realizar testes com usuários que utilizam tecnologias assistivas.
+
+---
+
+## **Resumo**
+O código apresenta várias violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico, 
+falta de descrições para elementos não textuais e problemas de contraste. Implementar as recomendações acima melhorará significativamente a acessibilidade.
+```
+
+
+
+==============>HOME
+```markdown
+# Análise de Acessibilidade do Código React
+
+## **Exame dos Elementos JSX**
+
+### **Tags e Critérios WCAG Violados**
+1. **`<div>` e `<span>`**
+   - **Problema**: Uso excessivo de `<div>` e `<span>` sem semântica clara.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Elementos semânticos devem ser usados para transmitir significado.
+   - **Recomendação**: Substituir `<div>` por elementos semânticos como `<section>`, `<article>`, `<header>`, etc., quando apropriado.
+
+2. **Falta de Texto Alternativo**
+   - **Problema**: O componente `<Logo>` não possui texto alternativo.
+   - **Critério Violado**: WCAG 1.1.1 (Conteúdo Não-Textual) - Todo conteúdo não textual deve ter uma alternativa textual.
+   - **Recomendação**: Adicionar uma propriedade `alt` ou `aria-label` ao componente `<Logo>` para descrever sua função.
+
+3. **Falta de Identificação de Listas**
+   - **Problema**: As listas `<ul>` não possuem um título ou descrição clara.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Listas devem ser identificáveis e compreensíveis.
+   - **Recomendação**: Adicionar um título ou descrição para as listas, como `<h3>` ou `aria-labelledby`.
+
+4. **Falta de Foco Visível**
+   - **Problema**: Não há elementos interativos no código atual, mas se forem adicionados, devem ter foco visível.
+   - **Critério Violado**: WCAG 2.4.7 (Foco Visível) - Elementos interativos devem ter um indicador de foco visível.
+   - **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`.
+
+---
+
+## **Avaliação do Código**
+
+### **Uso de HTML Semântico**
+- **Problema**: Uso inadequado de `<div>` para estruturação.
+- **Recomendação**: Substituir por elementos semânticos como `<section>` para agrupar os conteúdos principais e `<header>` para o título.
+
+### **Uso de ARIA Roles**
+- **Problema**: Não há uso de ARIA roles para melhorar a acessibilidade.
+- **Recomendação**: Adicionar roles como `role="main"` para o container principal e `aria-labelledby` para associar listas a seus títulos.
+
+### **Experiência com Leitores de Tela**
+- **Problema**: O componente `<Logo>` não possui descrição textual.
+- **Recomendação**: Adicionar `aria-label` ou `alt` ao componente `<Logo>` para melhorar a experiência com leitores de tela.
+
+### **Navegação por Teclado**
+- **Problema**: Não há elementos interativos no código atual, mas se forem adicionados, devem ser acessíveis via teclado.
+- **Recomendação**: Garantir que todos os elementos interativos sejam navegáveis com `Tab` e acionáveis com `Enter` ou `Space`.
+
+### **Relação de Contraste**
+- **Problema**: O texto com a classe `text-gray-600` pode não atender ao contraste mínimo exigido.
+- **Critério Violado**: WCAG 1.4.3 (Contraste - Mínimo) - Relação de contraste mínima de 4.5:1 para texto normal.
+- **Recomendação**: Ajustar a cor do texto para garantir contraste suficiente.
+
+---
+
+## **Recomendações Gerais**
+1. **Adicionar Testes de Acessibilidade Automatizados**
+   - Use ferramentas como Axe ou Lighthouse para identificar problemas adicionais.
+2. **Seguir as Diretrizes WCAG**
+   - Consulte as diretrizes WCAG 2.1 para garantir conformidade.
+3. **Testar com Usuários Reais**
+   - Realizar testes com usuários que utilizam tecnologias assistivas.
+
+---
+
+## **Resumo**
+O código apresenta algumas violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico,
+ falta de descrições para elementos não textuais e problemas de contraste. Implementar as recomendações acima melhorará significativamente a acessibilidade.
+```
+
+
+
+===============>PERSONA
+```markdown
+# Análise de Acessibilidade do Código React
+
+## **Exame dos Elementos JSX**
+
+### **Tags e Critérios WCAG Violados**
+1. **Uso de `<div>` sem semântica clara**
+   - **Problema**: O código utiliza `<div>` para estruturar o conteúdo sem considerar elementos semânticos apropriados.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Elementos semânticos devem ser usados para transmitir significado.
+   - **Recomendação**: Substituir `<div>` por elementos semânticos como `<section>`, `<article>`, ou `<main>` para melhorar a semântica do HTML.
+
+2. **Falta de Texto Alternativo para Imagens**
+   - **Problema**: O componente `PersonaCard` utiliza imagens (`image`) sem garantir que o atributo `alt` seja fornecido.
+   - **Critério Violado**: WCAG 1.1.1 (Conteúdo Não-Textual) - Todo conteúdo não textual deve ter uma alternativa textual significativa.
+   - **Recomendação**: Certificar-se de que todas as imagens no componente `PersonaCard` tenham um atributo `alt` descritivo.
+
+3. **Falta de Identificação Clara de Componentes Interativos**
+   - **Problema**: Não há uso de ARIA roles ou atributos para melhorar a acessibilidade de componentes interativos.
+   - **Critério Violado**: WCAG 4.1.2 (Nome, Função, Valor) - Elementos interativos devem ter nomes e funções claros.
+   - **Recomendação**: Adicionar atributos ARIA, como `aria-label` ou `aria-labelledby`, para descrever melhor os componentes interativos.
+
+---
+
+## **Avaliação do Código**
+
+### **Uso de HTML Semântico**
+- **Problema**: O código não utiliza elementos semânticos adequados para estruturar o conteúdo.
+- **Recomendação**: Substituir `<div>` por elementos como `<section>` para agrupar o conteúdo relacionado e `<header>` para títulos.
+
+### **Uso de ARIA Roles**
+- **Problema**: Não há uso de ARIA roles para melhorar a acessibilidade.
+- **Recomendação**: Adicionar roles como `role="main"` para o container principal e `aria-labelledby` para associar elementos a seus títulos.
+
+### **Experiência com Leitores de Tela**
+- **Problema**: A descrição das imagens e dos componentes interativos pode ser insuficiente para leitores de tela.
+- **Recomendação**: Garantir que todos os elementos interativos e imagens tenham descrições claras e significativas.
+
+### **Navegação por Teclado**
+- **Problema**: Não há menção de estilos de foco visíveis para elementos interativos.
+- **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+### **Relação de Contraste**
+- **Problema**: O texto e os elementos visuais podem não atender ao contraste mínimo exigido.
+- **Critério Violado**: WCAG 1.4.3 (Contraste - Mínimo) - Relação de contraste mínima de 4.5:1 para texto normal.
+- **Recomendação**: Usar ferramentas como o Lighthouse para verificar o contraste e ajustar as cores conforme necessário.
+
+---
+
+## **Recomendações Gerais**
+1. **Adicionar Testes de Acessibilidade Automatizados**
+   - Use ferramentas como Axe ou Lighthouse para identificar problemas adicionais.
+2. **Seguir as Diretrizes WCAG**
+   - Consulte as diretrizes WCAG 2.1 para garantir conformidade.
+3. **Testar com Usuários Reais**
+   - Realizar testes com usuários que utilizam tecnologias assistivas.
+
+---
+
+## **Resumo**
+O código apresenta algumas violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico,
+ falta de descrições para imagens, ausência de ARIA roles e problemas de contraste. Implementar as recomendações acima melhorará significativamente a acessibilidade.
+```
+
+
+
+============> ABOUT INCLUE
+
+```markdown
+# Análise de Acessibilidade do Código React
+
+## **Exame dos Elementos JSX**
+
+### **Tags e Critérios WCAG Violados**
+1. **Uso de `<div>` sem semântica clara**
+   - **Problema**: O código utiliza `<div>` para estruturar o conteúdo sem considerar elementos semânticos apropriados.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Elementos semânticos devem ser usados para transmitir significado.
+   - **Recomendação**: Substituir `<div>` por elementos semânticos como `<main>`, `<section>`, ou `<article>` para melhorar a semântica do HTML.
+
+2. **Falta de Identificação Clara de Componentes Interativos**
+   - **Problema**: Links e botões não possuem atributos ARIA ou descrições adicionais para melhorar a acessibilidade.
+   - **Critério Violado**: WCAG 4.1.2 (Nome, Função, Valor) - Elementos interativos devem ter nomes e funções claros.
+   - **Recomendação**: Adicionar atributos como `aria-label` ou `aria-labelledby` para descrever melhor os links e botões.
+
+3. **Falta de Texto Alternativo para Imagens**
+   - **Problema**: As imagens renderizadas pelo componente `AboutCard` não possuem texto alternativo (`alt`).
+   - **Critério Violado**: WCAG 1.1.1 (Conteúdo Não-Textual) - Todo conteúdo não textual deve ter uma alternativa textual significativa.
+   - **Recomendação**: Adicionar o atributo `alt` às imagens para descrever seu conteúdo.
+
+4. **Falta de Feedback Visual para Foco**
+   - **Problema**: Não há estilos visíveis para foco nos links e botões.
+   - **Critério Violado**: WCAG 2.4.7 (Foco Visível) - Elementos interativos devem ter um indicador de foco visível.
+   - **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+5. **Problemas com o Iframe do Google Maps**
+   - **Problema**: O iframe não possui um título (`title`) descritivo.
+   - **Critério Violado**: WCAG 4.1.2 (Nome, Função, Valor) - Iframes devem ter um título para descrever seu conteúdo.
+   - **Recomendação**: Adicionar o atributo `title` ao iframe, como `title="Mapa de localização do grupo de pesquisa"`.
+
+---
+
+## **Avaliação do Código**
+
+### **Uso de HTML Semântico**
+- **Problema**: O código não utiliza elementos semânticos adequados para estruturar o conteúdo.
+- **Recomendação**: Substituir `<div>` por elementos como `<main>` para o container principal e `<section>` para agrupar as seções de equipe, grupo de pesquisa e materiais complementares.
+
+### **Uso de ARIA Roles**
+- **Problema**: Não há uso de ARIA roles para melhorar a acessibilidade.
+- **Recomendação**: Adicionar roles como `role="region"` para as seções principais e `aria-live` para áreas que exibem informações dinâmicas.
+
+### **Experiência com Leitores de Tela**
+- **Problema**: A descrição dos links e imagens pode ser insuficiente para leitores de tela.
+- **Recomendação**: Garantir que os links tenham descrições claras e que as imagens possuam texto alternativo significativo.
+
+### **Navegação por Teclado**
+- **Problema**: Não há menção de estilos de foco visíveis para elementos interativos.
+- **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+### **Relação de Contraste**
+- **Problema**: Não há informações sobre a relação de contraste das cores utilizadas.
+- **Critério Violado**: WCAG 1.4.3 (Contraste - Mínimo) - Relação de contraste mínima de 4.5:1 para texto normal.
+- **Recomendação**: Usar ferramentas como o Lighthouse para verificar o contraste e ajustar as cores conforme necessário.
+
+---
+
+## **Recomendações Gerais**
+1. **Adicionar Testes de Acessibilidade Automatizados**
+   - Use ferramentas como Axe ou Lighthouse para identificar problemas adicionais.
+
+2. **Seguir as Diretrizes WCAG**
+   - Consulte as diretrizes WCAG 2.1 para garantir conformidade.
+
+3. **Testar com Usuários Reais**
+   - Realizar testes com usuários que utilizam tecnologias assistivas.
+
+---
+
+## **Resumo**
+O código apresenta algumas violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico,
+ falta de descrições para imagens e links, ausência de ARIA roles e problemas de foco visível. Implementar as recomendações acima melhorará significativamente a acessibilidade.
+```
+
+
+==================> CONSIDERATION INCLUDE
+
+```markdown
+# Análise de Acessibilidade do Código React
+
+## **Exame dos Elementos JSX**
+
+### **Tags e Critérios WCAG Violados**
+1. **Uso de `<div>` sem semântica clara**
+   - **Problema**: O código utiliza `<div>` para estruturar o conteúdo sem considerar elementos semânticos apropriados.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Elementos semânticos devem ser usados para transmitir significado.
+   - **Recomendação**: Substituir `<div>` por elementos semânticos como `<main>`, `<section>`, ou `<article>` para melhorar a semântica do HTML.
+
+2. **Falta de Identificação Clara de Componentes Interativos**
+   - **Problema**: O botão de "Voltar" e os links de referência não possuem atributos ARIA ou descrições adicionais para melhorar a acessibilidade.
+   - **Critério Violado**: WCAG 4.1.2 (Nome, Função, Valor) - Elementos interativos devem ter nomes e funções claros.
+   - **Recomendação**: Adicionar atributos como `aria-label` ou `aria-labelledby` para descrever melhor os links e botões.
+
+3. **Falta de Texto Alternativo para Imagens**
+   - **Problema**: As imagens renderizadas pelo componente `Image` possuem o atributo `alt`, mas é necessário garantir que o texto alternativo seja significativo e descritivo.
+   - **Critério Violado**: WCAG 1.1.1 (Conteúdo Não-Textual) - Todo conteúdo não textual deve ter uma alternativa textual significativa.
+   - **Recomendação**: Verificar e ajustar o conteúdo do atributo `alt` para descrever adequadamente as imagens.
+
+4. **Falta de Feedback Visual para Foco**
+   - **Problema**: Não há estilos visíveis para foco nos links e botões.
+   - **Critério Violado**: WCAG 2.4.7 (Foco Visível) - Elementos interativos devem ter um indicador de foco visível.
+   - **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+5. **Problemas com Vídeos e Áudios**
+   - **Problema**: Os elementos `<video>` e `<audio>` não possuem legendas ou transcrições associadas.
+   - **Critério Violado**: WCAG 1.2.2 (Legenda para Mídia Baseada em Tempo) - Vídeos devem ter legendas sincronizadas.
+   - **Recomendação**: Adicionar legendas para vídeos e transcrições para áudios.
+
+---
+
+## **Avaliação do Código**
+
+### **Uso de HTML Semântico**
+- **Problema**: O código não utiliza elementos semânticos adequados para estruturar o conteúdo.
+- **Recomendação**: Substituir `<div>` por elementos como `<main>` para o container principal e `<section>` para agrupar as seções de imagens, vídeos e áudios.
+
+### **Uso de ARIA Roles**
+- **Problema**: Não há uso de ARIA roles para melhorar a acessibilidade.
+- **Recomendação**: Adicionar roles como `role="region"` para as seções principais e `aria-live` para áreas que exibem informações dinâmicas.
+
+### **Experiência com Leitores de Tela**
+- **Problema**: A descrição dos links e imagens pode ser insuficiente para leitores de tela.
+- **Recomendação**: Garantir que os links tenham descrições claras e que as imagens possuam texto alternativo significativo.
+
+### **Navegação por Teclado**
+- **Problema**: Não há menção de estilos de foco visíveis para elementos interativos.
+- **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+### **Relação de Contraste**
+- **Problema**: Não há informações sobre a relação de contraste das cores utilizadas.
+- **Critério Violado**: WCAG 1.4.3 (Contraste - Mínimo) - Relação de contraste mínima de 4.5:1 para texto normal.
+- **Recomendação**: Usar ferramentas como o Lighthouse para verificar o contraste e ajustar as cores conforme necessário.
+
+---
+
+## **Recomendações Gerais**
+1. **Adicionar Testes de Acessibilidade Automatizados**
+   - Use ferramentas como Axe ou Lighthouse para identificar problemas adicionais.
+2. **Seguir as Diretrizes WCAG**
+   - Consulte as diretrizes WCAG 2.1 para garantir conformidade.
+3. **Testar com Usuários Reais**
+   - Realizar testes com usuários que utilizam tecnologias assistivas.
+
+---
+
+## **Resumo**
+O código apresenta algumas violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico, 
+falta de descrições para imagens e links, ausência de ARIA roles, problemas de foco visível e falta de legendas para vídeos.
+ Implementar as recomendações acima melhorará significativamente a acessibilidade.
+```
+
+
+===============> QUESTIONS INCLUE
+```markdown
+# Análise de Acessibilidade do Código React
+
+## **Exame dos Elementos JSX**
+
+### **Tags e Critérios WCAG Violados**
+1. **Uso de `<div>` sem semântica clara**
+   - **Problema**: O código utiliza `<div>` para estruturar o conteúdo sem considerar elementos semânticos apropriados.
+   - **Critério Violado**: WCAG 1.3.1 (Informação e Relacionamentos) - Elementos semânticos devem ser usados para transmitir significado.
+   - **Recomendação**: Substituir `<div>` por elementos semânticos como `<main>`, `<section>`, ou `<article>` para melhorar a semântica do HTML.
+
+2. **Falta de Identificação Clara de Componentes Interativos**
+   - **Problema**: Botões e links não possuem atributos ARIA ou descrições adicionais para melhorar a acessibilidade.
+   - **Critério Violado**: WCAG 4.1.2 (Nome, Função, Valor) - Elementos interativos devem ter nomes e funções claros.
+   - **Recomendação**: Adicionar atributos como `aria-label` ou `aria-labelledby` para descrever melhor os links e botões.
+
+3. **Falta de Texto Alternativo para Imagens**
+   - **Problema**: As imagens renderizadas pelo componente `Image` possuem o atributo `alt`, mas é necessário garantir que o texto alternativo seja significativo e descritivo.
+   - **Critério Violado**: WCAG 1.1.1 (Conteúdo Não-Textual) - Todo conteúdo não textual deve ter uma alternativa textual significativa.
+   - **Recomendação**: Verificar e ajustar o conteúdo do atributo `alt` para descrever adequadamente as imagens.
+
+4. **Falta de Feedback Visual para Foco**
+   - **Problema**: Não há estilos visíveis para foco nos links e botões.
+   - **Critério Violado**: WCAG 2.4.7 (Foco Visível) - Elementos interativos devem ter um indicador de foco visível.
+   - **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+5. **Problemas com Vídeos e Áudios**
+   - **Problema**: Os elementos `<video>` e `<audio>` não possuem legendas ou transcrições associadas.
+   - **Critério Violado**: WCAG 1.2.2 (Legenda para Mídia Baseada em Tempo) - Vídeos devem ter legendas sincronizadas.
+   - **Recomendação**: Adicionar legendas para vídeos e transcrições para áudios.
+
+---
+
+## **Avaliação do Código**
+
+### **Uso de HTML Semântico**
+- **Problema**: O código não utiliza elementos semânticos adequados para estruturar o conteúdo.
+- **Recomendação**: Substituir `<div>` por elementos como `<main>` para o container principal e `<section>` para agrupar as seções de perguntas e respostas.
+
+### **Uso de ARIA Roles**
+- **Problema**: Não há uso de ARIA roles para melhorar a acessibilidade.
+- **Recomendação**: Adicionar roles como `role="region"` para as seções principais e `aria-live` para áreas que exibem informações dinâmicas.
+
+### **Experiência com Leitores de Tela**
+- **Problema**: A descrição dos links e imagens pode ser insuficiente para leitores de tela.
+- **Recomendação**: Garantir que os links tenham descrições claras e que as imagens possuam texto alternativo significativo.
+
+### **Navegação por Teclado**
+- **Problema**: Não há menção de estilos de foco visíveis para elementos interativos.
+- **Recomendação**: Adicionar estilos CSS para foco, como `outline` ou `box-shadow`, para garantir que os elementos interativos sejam navegáveis com teclado.
+
+### **Relação de Contraste**
+- **Problema**: Não há informações sobre a relação de contraste das cores utilizadas.
+- **Critério Violado**: WCAG 1.4.3 (Contraste - Mínimo) - Relação de contraste mínima de 4.5:1 para texto normal.
+- **Recomendação**: Usar ferramentas como o Lighthouse para verificar o contraste e ajustar as cores conforme necessário.
+
+---
+
+## **Recomendações Gerais**
+1. **Adicionar Testes de Acessibilidade Automatizados**
+   - Use ferramentas como Axe ou Lighthouse para identificar problemas adicionais.
+
+2. **Seguir as Diretrizes WCAG**
+   - Consulte as diretrizes WCAG 2.1 para garantir conformidade.
+
+3. **Testar com Usuários Reais**
+   - Realizar testes com usuários que utilizam tecnologias assistivas.
+
+---
+
+## **Resumo**
+O código apresenta algumas violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico, falta de descrições para imagens e links, ausência de ARIA roles, problemas de foco visível e falta de legendas para vídeos. Implementar as recomendações acima melhorará significativamente a acessibilidade.
+```
+
+

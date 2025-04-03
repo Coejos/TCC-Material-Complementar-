@@ -32,7 +32,7 @@ Exemplo: Utilize ferramentas de verificação de contraste e ajuste as cores con
 
 
 
-==============>PESQUISA EM TABELA
+==============>PENSANDO EM REACT
 
 
 Análise de Acessibilidade WCAG para o Código JavaScript

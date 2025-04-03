@@ -67,7 +67,7 @@
 O código apresenta algumas violações das diretrizes WCAG, principalmente relacionadas ao uso de HTML semântico, falta de descrições para botões, ausência de ARIA roles e problemas de foco visível. Implementar as recomendações acima melhorará significativamente a acessibilidade.
 ```
 
-====================> PESQUISA EM TABELA
+====================> PENSANDO EM REACT
 ```markdown
 # Análise de Acessibilidade do Código React
 
